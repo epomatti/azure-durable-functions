@@ -1,5 +1,7 @@
 # Azure Durable Function
 
+<img src=".docs/entity.png" />
+
 Requirements:
 
 - [Azure Functions Core Tools SDK](https://github.com/Azure/azure-functions-core-tools)
@@ -51,13 +53,7 @@ Start the function app:
 func start
 ```
 
-Testing the app:
-
-```sh
-curl -X POST http://localhost:7071/api/counters/myCounter
-
-curl http://localhost:7071/api/counters/myCounter
-```
+Testing the app by sending messages to the queue.
 
 ## Reference
 
@@ -65,3 +61,4 @@ curl http://localhost:7071/api/counters/myCounter
 - [Stateful Entities](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-entities?tabs=csharp)
 - [Fan-out/fan-in scenario in Durable Functions](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-cloud-backup?tabs=javascript)
 - [Singleton orchestrators in Durable Functions](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-singletons?tabs=javascript)
+- [Functions built-in hooks](https://pjlee.net/blog/how-to-trigger-and-query-an-azure-entity-function-without-using-an-ordinary-function-just-use-the-bu)
