@@ -34,13 +34,21 @@ Create `local.settings.json` with the following content:
   "IsEncrypted": false,
   "Values": {
     "FUNCTIONS_WORKER_RUNTIME": "node",
-    "AzureWebJobsStorage": "http://127.0.0.1:10000"
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
+    "QueueConnectionString": "AccountName=devstoreaccount1;AccountKey=<<<ACCOUNT_KEY>>>;DefaultEndpointsProtocol=http;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1;"
   }
 }
 ```
+
+Replace the account key with your emulator key (use Storage Explorer to the Key).
 
 Start the function app:
 
 ```
 func start
+```
+
+```
+http://localhost:7071/api/counters/add
 ```
