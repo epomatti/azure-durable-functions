@@ -45,10 +45,14 @@ Replace the account key with your emulator key (use Storage Explorer to the Key)
 
 Start the function app:
 
-```
+```sh
 func start
 ```
 
-```
-http://localhost:7071/api/counters/add
+Testing the app:
+
+```sh
+curl -X POST http://localhost:7071/api/counters/myCounter
+
+curl http://localhost:7071/api/counters/myCounter
 ```
