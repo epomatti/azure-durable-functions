@@ -7,6 +7,8 @@ Requirements:
 - Service Bus namespace
 - Node 16+
 
+## Setup
+
 Ramp up a Service Bus instance:
 
 ```sh
