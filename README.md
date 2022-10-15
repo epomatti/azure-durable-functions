@@ -1,4 +1,4 @@
-# azure-durable-functions
+# Azure Durable Function
 
 Requirements:
 
@@ -18,6 +18,8 @@ az servicebus queue create -n "queue1" --namespace-name "bus-az-durable-function
 # Export for the function
 export AZURE_SERVICEBUS_CONNECTION_STRING=$(az servicebus namespace authorization-rule keys list -g "rg-local-dev" --namespace-name "bus-az-durable-functions-dev" --name "RootManageSharedAccessKey" --query "primaryConnectionString" -o tsv)
 ```
+
+> 💡 To quick start Service Bus local testing use my [Postman collection boilerplate](https://github.com/epomatti/servicebus-postman-collection)
 
 Start Azurite:
 
