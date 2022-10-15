@@ -15,8 +15,8 @@ Ramp up a Service Bus instance:
 # Create the thing
 az group create -n "rg-local-dev" -l "eastus2"
 az servicebus namespace create -n "bus-az-durable-functions-dev" -g "rg-local-dev" -l "eastus2" --sku "Basic"
-az servicebus queue create -n "queue1" --namespace-name "bus-az-durable-functions-dev" -g "rg-local-dev" --enable-partitioning
-az servicebus queue create -n "queue2" --namespace-name "bus-az-durable-functions-dev" -g "rg-local-dev" --enable-partitioning
+az servicebus queue create -n "inbound" --namespace-name "bus-az-durable-functions-dev" -g "rg-local-dev" --enable-partitioning
+az servicebus queue create -n "outbound" --namespace-name "bus-az-durable-functions-dev" -g "rg-local-dev" --enable-partitioning
 
 # Export for the function
 export AZURE_SERVICEBUS_CONNECTION_STRING=$(az servicebus namespace authorization-rule keys list -g "rg-local-dev" --namespace-name "bus-az-durable-functions-dev" --name "RootManageSharedAccessKey" --query "primaryConnectionString" -o tsv)
@@ -58,3 +58,10 @@ curl -X POST http://localhost:7071/api/counters/myCounter
 
 curl http://localhost:7071/api/counters/myCounter
 ```
+
+## Reference
+
+- [Aggregator (Scatter-Gather)](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview?tabs=javascript#aggregator)
+- [Stateful Entities](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-entities?tabs=csharp)
+- [Fan-out/fan-in scenario in Durable Functions](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-cloud-backup?tabs=javascript)
+- [Singleton orchestrators in Durable Functions](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-singletons?tabs=javascript)
