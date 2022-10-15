@@ -7,7 +7,6 @@
       "direction": "in",
       "route": "counters/{id}",
       "methods": [
-        "post",
         "get"
       ]
     },
