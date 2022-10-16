@@ -57,6 +57,7 @@ Testing the app by sending messages to the queue.
 
 ## Reference
 
+- [Durable Functions .NET Entities](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-dotnet-entities)
 - [Aggregator (Scatter-Gather)](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview?tabs=javascript#aggregator)
 - [Stateful Entities](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-entities?tabs=csharp)
 - [Fan-out/fan-in scenario in Durable Functions](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-cloud-backup?tabs=javascript)
