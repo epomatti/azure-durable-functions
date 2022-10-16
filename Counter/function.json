@@ -4,6 +4,13 @@
       "name": "context",
       "type": "entityTrigger",
       "direction": "in"
+    },
+    {
+      "name": "outboundQueue",
+      "type": "serviceBus",
+      "direction": "out",
+      "queueName": "outbound-queue",
+      "connection": "AZURE_SERVICEBUS_CONNECTION_STRING"
     }
   ]
 }

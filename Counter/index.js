@@ -2,7 +2,6 @@
 
 module.exports = df.entity(function (context) {
     let currentValue = context.df.getState(() => 0);
-
     switch (context.df.operationName) {
         case "add":
             const amount = context.df.getInput();
@@ -16,7 +15,9 @@ module.exports = df.entity(function (context) {
             break;
     }
     if(currentValue >= 1000) {
-        console.log(">>>>>>>>>>>>>>> Completed <<<<<<<<<<<<<<<<<")
+        console.log("Completed.")
+        context.bindings.outboundQueue = "completed";
+        console.log("Message sent to output queue.")
     }
     context.df.setState(currentValue);
 });
